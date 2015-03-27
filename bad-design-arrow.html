@@ -1,71 +1,50 @@
 <!DOCTYPE html>
-  <link href="../polymer/polymer.html" rel="import">
-  <style shim-shadowdom>
-    html /deep/ bad-design-arrow .my-icon {
-      position: relative;
-    }
-
-    html /deep/ bad-design-arrow .my-icon > i {
-      position: absolute;
-      display: inline-block;
-      width: 0;
-      height: 0;
-      line-height: 0;
-      border: 1em solid #78aadd;
-      border-bottom: 1em solid #78aadd;
-      left: 4em;
-      top: 0em;
-    }
-    html /deep/ bad-design-arrow .my-icon > i+i { 
-      color:#fff;
-      position: absolute;
-      display: inline-block;
-      line-height: 0;
-      border: 3em solid transparent;
-      border-left: 2em solid #78aadd;
-      left: 8em;
-      top: 0em;
-      padding-left:1em;
-    }
-    html /deep/ bad-design-arrow .my-icon > i+i+i {
-      position: absolute;
-      display: inline-block;
-      line-height: 0;
-      border: 3em solid #78aadd;
-      border-left: 2em solid transparent;
-      border-right: 5em solid #78aadd;
-      left: 0em;
-      top: 0em;
-    } 
-    html /deep/ bad-design-arrow .on .my-icon > i {
-      border-top-color:#00FF00;
-      border-left-color:#00FF00;
-      border-right-color:#00FF00;
-      border-bottom-color:#00FF00;
-  }
-  html /deep/ bad-design-arrow .on .my-icon > i+i {
-      border-top-color:transparent;
-      border-bottom-color:transparent;
-  }
-  html /deep/ bad-design-arrow .on .my-icon > i+i+i {
-    border-top-color:#00FF00;
-    border-left-color:transparent;
-    border-right-color:#00FF00;
-    border-bottom-color:#00FF00;
-  }
-  html /deep/ bad-design-arrow div.width {
-    display:inline-block;
-    white-space:nowrap;
-    width:9em;
-    height:6em;
-  } 
-</style>
+<link href="../polymer/polymer.html" rel="import">
 <polymer-element name="bad-design-arrow" attributes="on">
-  <template>
+
+  <style shim-shadowdom>
+    html /deep/ .my-icon { position: relative; }
+
+    html /deep/ .my-icon > i { position: absolute; display: inline-block;
+      width: 0; height: 0; line-height: 0; border: 1em solid #78aadd;
+      border-bottom: 1em solid #78aadd; left: 4em; top: 0em;
+      font-style: normal;
+    }
+    html /deep/ .my-icon > i+i { 
+      color:#fff; position: absolute; display: inline-block; line-height: 0;
+      border: 3em solid transparent; border-left: 2em solid #78aadd; left: 17em;
+      top: 0em; padding-left:1em;
+    }
+    html /deep/ .my-icon > i+i+i { position: absolute; display: inline-block;
+      line-height: 0; border: 3em solid #78aadd; border-left: 2em solid transparent;
+      border-right: 5em solid #78aadd; left: 0em; top: 0em;
+  width: 9em;
+    } 
+    html /deep/ .my-icon > i+i+i h3 {
+      text-align: center;
+      width: 100%;
+    }
+    html /deep/ .on .my-icon > i {
+      border-top-color:#00FF00; border-left-color:#00FF00;
+      border-bottom-color:#00FF00;
+    }
+    html /deep/ .on .my-icon > i+i {
+      border-top-color:transparent; border-bottom-color:transparent;
+    }
+    html /deep/ .on .my-icon > i+i+i {
+      border-top-color:#00FF00; border-left-color:transparent;
+      border-right-color:#00FF00; border-bottom-color:#00FF00;
+    }
+    html /deep/ div.width {
+  display: inline-block; white-space: nowrap;
+  width: 0; height: 6em; margin: 3em 18em 3em 0em;
+    } 
+  </style>
+  <template id="bad-design-arrow">
     <div class="width {{on}}">
-      <i class="my-icon"><i></i><i></i><i><content></content> </i></i>
+      <i class="my-icon"><i></i><i></i><i  horizontal layout><h3 self-center><content></content></h3></i></i>
     </div>
-  <template>
-</polymer-element>   
+  </template>
+</polymer-element> 
 
   
